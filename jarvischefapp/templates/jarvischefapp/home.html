@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title>Jarvis Chef</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'jarvischefapp/css/style.css' %}"
+        />
+    </head>
+
+    <body>
+        <h1>Welcome!! I am Jarvis Chef!!</h1>
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %} {{form.recipe_message}}
+            <button type="submit">Ask</button>
+        </form>
+        {{ai_response_recipe}}
+    </body>
+</html>
